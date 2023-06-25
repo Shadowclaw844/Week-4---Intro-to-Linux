@@ -19,7 +19,7 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
     </style>
-    <title>Challenge 3</title>
+    <title>Week 4 Box 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.scss">
@@ -28,25 +28,29 @@ error_reporting(E_ERROR | E_PARSE);
 
 </head>
 <body>
-    
-    <br><br>
-    <p class="searchHelper">Contact a Faculty Member</p>
-
-    <form action="search.php" method="get">
-    <div class="input-group mb-3" style="width:500px;margin:0 auto;">
-        
-        <input name="q" type="text" class="form-control" aria-describedby="button-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-info" type="submit" id="button-addon2">Search</button>
+    <div class="d-block px-3 py-2 text-center text-bold text-white bg-danger old-bv">As we migrate databases, some functionality may be broken</div>
+    <nav class="navbar navbar-dark bg-dark">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+        <p></p>
+        <form action="search.php" method="get">
+        <div class="input-group mb-3" style="width:500px;margin:0 auto;">
+            
+            <input name="q" type="text" class="form-control" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-info" type="submit" id="button-addon2">Search</button>
+            </div>
+            
         </div>
-        
-    </div>
 
-    <h4 class="hero">Search by faculty name or ID</h4>
+        <h4><center>Search by faculty name or ID</center></h4>
 
-    </form>
-    <div class="cardList">
-
+        </form>
     </div>
 
 </body>

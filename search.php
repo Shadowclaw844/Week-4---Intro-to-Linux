@@ -19,7 +19,7 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
     </style>
-    <title>Challenge 3</title>
+    <title>Week 4 Box 2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.scss">
@@ -28,9 +28,18 @@ error_reporting(E_ERROR | E_PARSE);
 
 </head>
 <body>
+    <div class="d-block px-3 py-2 text-center text-bold text-white bg-danger old-bv">As we migrate databases, some functionality may be broken</div>
+    <!-- include fixed-dark if broken below -->
+    <nav class="navbar navbar-dark bg-dark">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </nav>
 
     <br><br>
-    <p class="searchHelper">Search for faculty here</p>
+    <p class="searchHelper text-dark">Search for faculty here</p>
 
     <form action="search.php" method="get">
     <div class="input-group mb-3" style="width:500px;margin:0 auto;">
@@ -72,7 +81,7 @@ error_reporting(E_ERROR | E_PARSE);
                 </div>";
             }
         } else {
-            echo "<h1 class='noResults'>0 results</h1>";
+            echo "<h1 class='noResults text-dark text-center'>0 results</h1>";
         }
         ?>
     </div>
