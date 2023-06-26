@@ -19,7 +19,7 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
     </style>
-    <title>Week 4 Box 2</title>
+    <title>Chisel & Bits</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.scss">
@@ -30,12 +30,15 @@ error_reporting(E_ERROR | E_PARSE);
 <body>
     <div class="d-block px-3 py-2 text-center text-bold text-white bg-danger old-bv">As we migrate databases, some functionality may be broken</div>
     <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand ml-auto text-center" href="index.php">Chisel & Bits</a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
             </li>
         </ul>
     </nav>
+    <br></br>
+    <center><img src="images/construction.gif" class=""></img></center>
     <div>
         <p></p>
         <form action="search.php" method="get">
@@ -48,7 +51,7 @@ error_reporting(E_ERROR | E_PARSE);
             
         </div>
 
-        <h4><center>Search by faculty name or ID</center></h4>
+        <h4><center>Search for tools by name or ID</center></h4>
 
         </form>
     </div>

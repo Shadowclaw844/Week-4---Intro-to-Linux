@@ -19,7 +19,7 @@ error_reporting(E_ERROR | E_PARSE);
         }
 
     </style>
-    <title>Week 4 Box 2</title>
+    <title>Chisel & Bits</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="main.scss">
@@ -31,6 +31,7 @@ error_reporting(E_ERROR | E_PARSE);
     <div class="d-block px-3 py-2 text-center text-bold text-white bg-danger old-bv">As we migrate databases, some functionality may be broken</div>
     <!-- include fixed-dark if broken below -->
     <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand ml-auto text-center" href="index.php">Chisel & Bits</a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
                 <a class="nav-link" href="#">Login<span class="sr-only">(current)</span></a>
@@ -39,7 +40,7 @@ error_reporting(E_ERROR | E_PARSE);
     </nav>
 
     <br><br>
-    <p class="searchHelper text-dark">Search for faculty here</p>
+    <p class="searchHelper text-dark">Search for tools by name or ID</p>
 
     <form action="search.php" method="get">
     <div class="input-group mb-3" style="width:500px;margin:0 auto;">
@@ -58,25 +59,29 @@ error_reporting(E_ERROR | E_PARSE);
         if(isset($_GET["q"])) {
             $searchQuery = $_GET["q"];
             if($_GET["q"] == "") {
-                $sql = "SELECT * FROM faculty WHERE id > 1000";
+                $sql = "SELECT * FROM tools WHERE id > 1000";
             }
             else{
-                $sql = "SELECT * FROM faculty WHERE (`name` LIKE '%".$searchQuery."%') OR (`id` LIKE '%".$searchQuery."%')";
+                $sql = "SELECT * FROM tools WHERE (`name` LIKE '%".$searchQuery."%') OR (`id` LIKE '%".$searchQuery."%')";
             }
         } else {
-            $sql = "SELECT * FROM faculty WHERE id > 0";
+            $sql = "SELECT * FROM tools WHERE id > 0";
         }
         $result = $link->query($sql);
         if ($result->num_rows > 0) {
             // output data of each row
             while ($row = $result->fetch_assoc()) {
-                $user_query = "SELECT username FROM userdata WHERE id = " . $row["id"];
+                $user_query = "SELECT name FROM tools WHERE id = " . $row["id"];
                 $user_result = $link->query($user_query)->fetch_assoc();
+                $image = $row["name"];
                 echo "
                 <div class='card'>
                     <div class='card-body'>
                         <h5 class='card-title'>" . $row["name"] . "</h5>
-                        <p class='card-text'>Email: " . $row["email"] . "</p>
+                        <!-- Move below to change image location -->
+                        <img src=images/$image.png></img>
+                        <p class='card-text'>Cost: $" . $row["price"] . "</p>
+                        <p class='card-text'>Cost: $" . $row["stock"] . "</p>
                     </div>
                 </div>";
             }
